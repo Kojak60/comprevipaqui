@@ -1,5 +1,5 @@
 {
-  "buildCommand": "cd core && composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist",
+  "buildCommand": "php -v && (composer --version || (curl -sS https://getcomposer.org/installer | php -- --install-dir=/tmp --filename=composer)) && (composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist --working-dir=core || php /tmp/composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist --working-dir=core)",
   "functions": {
     "api/index.php": {
       "runtime": "vercel-php@0.7.3",
@@ -30,4 +30,5 @@
     "SESSION_SAME_SITE": "lax"
   }
 }
+
 
