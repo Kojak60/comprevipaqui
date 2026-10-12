@@ -1,24 +1,25 @@
 {
-  "buildCommand": "cd core && composer install --no-dev --optimize-autoloader 2>&1",
-  "devCommand": "cd core && php artisan serve",
-  "framework": "laravel",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.php"
-    }
-  ],
+  "buildCommand": "cd core && composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist",
   "functions": {
-    "index.php": {
-      "runtime": "php-8.3",
-      "maxExecutionTime": 30,
-      "maxMemorySize": 512
+    "api/index.php": {
+      "runtime": "vercel-php@0.7.3",
+      "maxDuration": 30,
+      "memory": 1024
     }
   },
+  "rewrites": [
+    {
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/api/index.php"
+    }
+  ],
   "env": {
     "APP_ENV": "production",
     "APP_DEBUG": "false",
-    "APP_URL": "https://ecommerce-template.vercel.app",
     "LOG_CHANNEL": "stderr",
     "CACHE_DRIVER": "array",
     "SESSION_DRIVER": "cookie",
@@ -29,3 +30,4 @@
     "SESSION_SAME_SITE": "lax"
   }
 }
+
