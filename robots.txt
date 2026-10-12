@@ -1,0 +1,60 @@
+# robots.txt
+User-agent: *
+
+# Allow crawling of main site
+Allow: / 
+
+# Disallow admin, API, cart, checkout, and other sensitive areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /cart/
+Disallow: /checkout/
+Disallow: /wishlist/
+Disallow: /compare/
+Disallow: /orders/
+Disallow: /account/
+Disallow: /track-order/
+Disallow: /user/
+
+# Allow crawling of product pages, categories, and important content
+Allow: /assets/
+Allow: /storage/app/public/products/
+Allow: /storage/app/public/categories/
+Allow: /storage/app/public/brands/
+
+# Allow crawling of key pages
+Allow: /products
+Allow: /categories
+Allow: /brands
+Allow: /offers
+Allow: /about-us
+Allow: /contact
+Allow: /faq
+Allow: /cookie-policy
+Allow: /track-order
+Allow: /cart
+Allow: /wishlist
+Allow: /compare
+
+# Sitemap
+Sitemap: https://your-project.vercel.app/sitemap.xml
+
+# Crawl delay for better server management
+# Crawl-delay: 1
+
+# Prevent duplicate content
+Disallow: /?session=
+Disallow: /?ref=
+
+# Prevent indexing of search results pages (optional)
+Disallow: /?s=
+
+# Disallow PHP files (except specific ones if needed)
+Disallow: /*.php
+
+# Disallow internal assets
+Disallow: /public/index.php
+
+# Allow all except the above
+# This must be the last rule
+Allow: /

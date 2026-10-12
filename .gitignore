@@ -1,0 +1,43 @@
+# Dependencies
+/vendor
+/node_modules
+
+# Environment
+.env
+.env.backup
+.env.production
+
+# IDE
+/.idea
+/.vscode
+/.fleet
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Testing
+/.phpunit.cache
+/.phpunit.result.cache
+
+# Build
+/public/build
+/public/hot
+/public/storage
+
+# Storage
+/storage/*.key
+
+# Vercel
+.vercel
+
+# Composer
+composer.phar
+
+# Installer (not needed for production)
+/install
